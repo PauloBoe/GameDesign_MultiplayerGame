@@ -1,55 +1,49 @@
-//Auteur: Paulo Boe
-//User Story 1: Controle over karakter
-
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    [SerializeField] Movement movement;
-    [SerializeField] MouseLook mouseLook;
-    [SerializeField] WeaponController weaponController;
+    [Header("Player 1")]
+    [SerializeField] Movement movement1;
+    [SerializeField] MouseLook mouseLook1;
+    [SerializeField] WeaponController weaponController1;
 
-    //Link to Unity Input System
-    PlayerControls controls;
-    PlayerControls.GroundmovmentActions groundMovement;
-    PlayerControls.PlayerActionsActions playerActions;
+    [Header("Player 2")]
+    [SerializeField] Movement movement2;
+    [SerializeField] MouseLook mouseLook2;
+    [SerializeField] WeaponController weaponController2;
 
-    private Vector2 horizontalInput;
-    private Vector2 mouseInput;
-
-    private void Awake()
-    {
-        controls = new PlayerControls();
-        groundMovement = controls.Groundmovment;
-        playerActions = controls.PlayerActions;
-
-        //Here the methods are mapped to the controlls
-        groundMovement.HorizontalMovement.performed += ctx => horizontalInput = ctx.ReadValue<Vector2>();
-        groundMovement.MouseX.performed += ctx => mouseInput.x = ctx.ReadValue<float>();
-        groundMovement.MouseY.performed += ctx => mouseInput.y = ctx.ReadValue<float>();
-        groundMovement.Jump.performed += _ => movement.OnJumpPressed();
-        playerActions.Reload.performed += _ => weaponController.OnReload();
-        playerActions.WeaponSwitch.performed += _ => weaponController.OnSwitchGuns();
-    }
+    private Gamepad pad1;
+    private Gamepad pad2;
 
     private void Update()
     {
-        //Continuous checking for mouse movement input
-        movement.ReceiveInput(horizontalInput);
-        mouseLook.ReceiveInput(mouseInput);
+        // Auto-assign connected gamepads
+        pad1 = Gamepad.all.Count > 0 ? Gamepad.all[0] : null;
+        pad2 = Gamepad.all.Count > 1 ? Gamepad.all[1] : null;
 
-        if (playerActions.Shoot.IsPressed())
-        {
+        if (pad1 != null) HandlePlayer(pad1, movement1, mouseLook1, weaponController1);
+        if (pad2 != null) HandlePlayer(pad2, movement2, mouseLook2, weaponController2);
+    }
+
+    private void HandlePlayer(Gamepad pad, Movement movement, MouseLook mouseLook, WeaponController weaponController)
+    {
+        Vector2 move = pad.leftStick.ReadValue();
+        Vector2 look = pad.rightStick.ReadValue();
+
+        movement.ReceiveInput(move);
+        mouseLook.ReceiveInput(look);
+
+        if (pad.buttonSouth.wasPressedThisFrame)
+            movement.OnJumpPressed();
+
+        if (pad.rightTrigger.isPressed)
             weaponController.OnMouseShoot();
-        }
-    }
 
-    private void OnEnable()
-    {
-        controls.Enable();
-    }
-    private void OnDisable()
-    {
-        controls.Disable();
+        if (pad.buttonWest.wasPressedThisFrame)
+            weaponController.OnReload();
+
+        if (pad.rightShoulder.wasPressedThisFrame)
+            weaponController.OnSwitchGuns();
     }
 }
