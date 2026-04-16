@@ -16,7 +16,7 @@ public class WeaponController : MonoBehaviour
 
 
     // Paulo
-    private Camera _camera;
+    [SerializeField] private Camera _camera;
     [SerializeField] private LayerMask _cameraLayerMask;
 
 
@@ -26,7 +26,7 @@ public class WeaponController : MonoBehaviour
             _weaponClasses.Add(weapon.GetComponent<Weapon>());
 
         // Paulo 
-        _camera = Camera.main;
+        //_camera = Camera.main;
     }
 
     // Void OnMouseShoot gemaakt door: Paulo, Dion en Stijn
