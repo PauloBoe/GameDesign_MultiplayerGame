@@ -20,6 +20,8 @@ public class Health : MonoBehaviour
     [SerializeField] private ColorParameter _black;
     [SerializeField] private ColorParameter _red;
     [SerializeField] private UnityEngine.UI.Image _playerHealthbar;
+
+
     private bool isDead = false;
     private int _maxHealth;
 
@@ -40,6 +42,7 @@ public class Health : MonoBehaviour
 
     public void Damage(float pAmount)
     {
+        #region
         // Floor the amount to an int
         int amount = Mathf.FloorToInt(pAmount);
         health -= amount;
@@ -52,13 +55,13 @@ public class Health : MonoBehaviour
         else if (_vignette != null)
         {
             // Change the healthbar
-            _playerHealthbar.fillAmount = (float)health / (float)_maxHealth;
+            // _playerHealthbar.fillAmount = (float)health / (float)_maxHealth;
             // Set the color of the vignette to red for damage feedback and Invoke set black function after 0.5 seconds
             _vignette.color.Override(Color.red);
             Invoke("SetVignetteBlack", 0.5f);
         }
 
-
+        #endregion
         // If the health is lower or equal to 0 and the player is not already dead (preventing multiple dead body spawns).
         if (health <= 0 && !isDead)
         {
@@ -72,14 +75,12 @@ public class Health : MonoBehaviour
                 // Destroy the current object
                 Destroy(gameObject);
                 isDead = true;
-            }
-            else
-            {
-                // If the health script is on the player, reset the scene
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                Debug.Log("health is now zero. You died!");
             }
         }
     }
+
+
 
     // Set the vignette to black
     public void SetVignetteBlack()

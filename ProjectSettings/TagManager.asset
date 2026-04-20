@@ -16,8 +16,8 @@ TagManager:
   - Player1
   - Player2
   - Bullet
-  - 
-  - 
+  - Trail1
+  - Trail2
   - 
   - 
   - 
@@ -42,6 +42,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player1Trail
+    uniqueID: 1016411049
+    locked: 0
+  - name: Player2Trail
+    uniqueID: 2546398809
     locked: 0
   m_RenderingLayers:
   - Default
