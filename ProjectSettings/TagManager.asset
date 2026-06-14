@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Player1
   - Player2
+  - DeadPlayer
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Bullet
   - Trail1
   - Trail2
-  - 
+  - DeadPlayer
   - 
   - 
   - 

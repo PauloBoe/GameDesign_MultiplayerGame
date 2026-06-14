@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4624489852018217066}
   - component: {fileID: 4782186686931717160}
   - component: {fileID: 5711788034847454198}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 447
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 7907294428292515439}
   - component: {fileID: 5695014769617925342}
   - component: {fileID: 7083551206548129810}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: YouLost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,8 +171,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -284.33478, y: 0}
-  m_SizeDelta: {x: 530, y: 100}
+  m_AnchoredPosition: {x: -205, y: 0}
+  m_SizeDelta: {x: 250.5, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5695014769617925342
 CanvasRenderer:
@@ -229,10 +229,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 128
+  m_fontSize: 71.3
   m_fontSizeBase: 128
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 3357870093980156676}
   - component: {fileID: 2100063120638014696}
   - component: {fileID: 8436916533688409895}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Backpack (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 4484207936747527323}
   - component: {fileID: 7148059692631172154}
   - component: {fileID: 8833455592799899842}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Eyes (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 4373082090910408310}
   - component: {fileID: 7766327629166804134}
   - component: {fileID: 518066535053251002}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: YouDiedCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -571,8 +571,8 @@ GameObject:
   - component: {fileID: 5142931675322513356}
   - component: {fileID: 8263519542321512686}
   - component: {fileID: -7559512119222062265}
-  m_Layer: 6
-  m_Name: BasicEnemyDead
+  m_Layer: 11
+  m_Name: BasicEnemyDead2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -779,11 +779,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 563888939938328535, guid: 319e8cfd2dd60264ca58517eac20d757, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1854106892777928013, guid: 319e8cfd2dd60264ca58517eac20d757, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3638157637035141733, guid: 319e8cfd2dd60264ca58517eac20d757, type: 3}
       propertyPath: m_Name
@@ -791,7 +791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3638157637035141733, guid: 319e8cfd2dd60264ca58517eac20d757, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3638157637035141733, guid: 319e8cfd2dd60264ca58517eac20d757, type: 3}
       propertyPath: m_IsActive
@@ -799,11 +799,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7114536052426271281, guid: 319e8cfd2dd60264ca58517eac20d757, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7158385626133758858, guid: 319e8cfd2dd60264ca58517eac20d757, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7550059260984278164, guid: 319e8cfd2dd60264ca58517eac20d757, type: 3}
       propertyPath: m_LocalScale.x
@@ -839,7 +839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9052729090440629032, guid: 319e8cfd2dd60264ca58517eac20d757, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
